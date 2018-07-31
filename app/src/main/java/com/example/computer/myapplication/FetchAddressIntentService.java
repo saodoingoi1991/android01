@@ -34,6 +34,9 @@ public class FetchAddressIntentService extends IntentService {
     @Override
     protected void onHandleIntent(Intent intent) {
         String errorMessage = "";
+        if (intent == null) {
+            return;
+        }
         Geocoder geocoder = new Geocoder(this, Locale.getDefault());
 
         // Get the location passed to this service through an extra.
